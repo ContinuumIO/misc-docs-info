@@ -2,6 +2,8 @@
 
 Welcome! This GitHub repository aspires to become a comprehensive tutorial for GitHub, git, rst and Sphinx, GitHub Pages, and Travis CI. The repository contains a guest book, so for your first edit to a GitHub repository using these tools, you can simply sign the guest book.
 
+This tutorial currently (2015 Jul 2) covers making changes to a repository where you are a collaborator, and I hope soon to add information on making changes and pull requests to other repositories where you are not a collaborator, and explain common examples of each.
+
 To begin, on an OS X or Linux machine, make a GitHub account if you don't already have one, and log in.
 
 Open a terminal window.
@@ -42,15 +44,15 @@ Make a GitHub working directory, which we will somewhat arbitrarily call 'ghw', 
     mkdir ghw
     cd ghw
 
-Go to https://github.com/electronwill/sphinx . On the right there's a box that says "HTTPS clone URL". Click the "SSH" link underneath it so it shows the "SSH clone URL" instead. Copy that URL, such as git@github.com:electronwill/sphinx.git .
+Go to https://github.com/ContinuumIO/misc-docs-info . On the right there's a box that says "HTTPS clone URL". Click the "SSH" link underneath it so it shows the "SSH clone URL" instead. Copy that URL, such as git@github.com:ContinuumIO/misc-docs-info.git .
 
 Next, "clone" the repository to create a copy of it on your local computer, where you can make edits before publishing them to the repository on GitHub:
 
-    git clone git@github.com:electronwill/sphinx.git
+    git clone git@github.com:ContinuumIO/misc-docs-info.git
 
-Go into the sphinx directory in the local copy of the repository:
+Go into the misc-docs-info directory in the local copy of the repository:
 
-    cd sphinx
+    cd misc-docs-info
 
 Now we'll build a conda environment with the tools needed for documentation. Conda developer Aaron Meurer has already created a conda package named "conda-docs-deps" to help with this process. Enter the following:
 
@@ -91,9 +93,9 @@ Build the html files from the rst file sources:
 
     make clean; make html
 
-Now open ~/ghw/sphinx/build/html/index.html in a browser. As well as the browser's "file/open file" option, you can use ``open build/html/index.html`` on OS X or ``firefox build/html/index.html`` on Linux. Use the link on the index page to look at the guest book. Then you can close that browser tab.
+Now open ~/ghw/misc-docs-info/build/html/index.html in a browser. As well as the browser's "file/open file" option, you can use ``open build/html/index.html`` on OS X or ``firefox build/html/index.html`` on Linux. Use the link on the index page to look at the guest book. Then you can close that browser tab.
 
-Now choose your favorite editor. nano is a cross platform editor that runs in the terminal, and there are also many good graphical editors such as gedit on Linux and Atom on OS X. Use your editor to open the file ``source/guest.rst``. This is a simple rst file, with little formatting, and it should just display the text almost the same way a text editor does. Add your name and the date, and save and close the file.
+Now choose your favorite editor. nano is a cross platform editor that runs in the terminal, and there are also many good graphical editors such as gedit on Linux and Atom on OS X. Use your editor to open the file ``source/guest.rst``. This is a simple ReStructured Text .rst file, with little formatting, and it should just display the text almost the same way a text editor does. Add your name and the date, and save and close the file.
 
 Now open index.html in a browser again and look at the guest book to see that it hasn't changed. The rst file is different, but to make the html different, we will need to rebuild it. Close the browser tab.
 
@@ -113,17 +115,21 @@ Git should report that you have modified the file ``source/guest.rst``. Add that
 
     git add source/guest.rst
 
-If you wish to remove or move files in a repository and then commit that change, use "git rm" and "git mv", which work the same way as the Linux and OS X "rm" and "mv" commands.
+If you wish to remove or move files that are already in a repository and already tracked by git and then commit that change, use "git rm" and "git mv", which work the same way as the Linux and OS X "rm" and "mv" commands.
 
-Once you're done making changes, you will put these changes into a "commit", which describes them to the repository maintainer who will merge them into the repository:
+Once you're done making changes, you will put these changes into a "commit", which describes them to the repository maintainer who will merge them into the repository.
 
-    git commit
-
-This will open the nano text editor so you can write a commit message. Before writing your first commit message, please read these two brief lessons on how to write them well.
+Before writing your first commit message, please read these two brief lessons on how to write them well.
 
 https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
 
 http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+
+Now, commit your changes:
+
+    git commit
+
+This will open the nano text editor so you can write a commit message.
 
 Once your message has been written, use control-x to exit nano, and follow its prompts to save your file with the filename suggested.
 
@@ -131,9 +137,13 @@ Now we are ready to push the changes from our local machine to GitHub with the `
 
     git push origin sign-guest-book
 
-In a browser, go to https://github.com/electronwill/sphinx . You should see a message that you recently pushed branches and a green "Compare & pull request" button. You can use that button to request that the repository's maintainers pull your changes into the repository. Once the pull request is made, you can leave comments below it, and communicate with other users such as the repository owners using "@name" mentions.
+In a browser, go to https://github.com/ContinuumIO/misc-docs-info . You should see a message that you recently pushed branches and a green "Compare & pull request" button. You can use that button to request that the repository's maintainers pull your changes into the repository. Once the pull request is made, you can leave comments below it, and communicate with other users such as the repository owners using "@name" mentions.
 
 They may ask you to make further changes before they approve the pull request, and you can do this by editing the files again, using ``git add``, ``git commit``, and ``git push`` again, and leaving another comment asking them to review the changes again. These changes will appear on the same pull request, so you don't need to make a new pull request.
+
+Because you are a collaborator on this project, you will see a green "merge pull request" button, and you will be able to merge your own pull request yourself. However, before making any merges yourself, you should probably ask the repository owner if they want you to merge in your own changes, or to ask the owner or another repository collaborator to review your changes and merge them.
+
+When a GitHub repository has been set up for continuous integration with the Travis CI site, you will see additional information on each pull request about whether Travis CI has finished its automatic testing and about whether those tests passed. This can be used to detect Sphinx build errors and warnings so that you can correct them and be sure the ReStructured Text files in the repository stay correctly linked and consistent. Currently (2015 Jul 2) Travis CI is set up with https://github.com/conda/conda-docs and https://github.com/electronwill/sphinx/ , and I hope soon to set up Travis CI with https://github.com/ContinuumIO/misc-docs-info .
 
 Once the changes are merged, go back to the terminal window, go back to the master branch, use ``git pull`` to pull the latest changes in the GitHub repository down to our local copy, and delete the sign-guest-book branch:
 
@@ -157,7 +167,7 @@ When you're done, deactivate the conda environment and return to the home direct
 
 Many of the previous steps don't need to be done every time. For example, ``git clone`` is only done once for each repository, and ``conda create`` only once. For edits after the first one, do this:
 
-    cd ~/ghw/sphinx
+    cd ~/ghw/misc-docs-info
     source activate docs
     git checkout master
     git pull
@@ -191,7 +201,7 @@ Once the changes are merged, return git to the master branch and update it, dele
 
 ##Other notes
 
-This is only one possible workflow, and different repositories and their owners and maintainers may have different ways of doing things. For example, a maintainer may ask that you fork a repository to your own GitHub account, and still pull from the main repository, but add your own repository as a named remote repository and push to that instead of to the origin, and make pull requests from those pushes. Although slightly more complex for the users, this method keeps the branch history of the main project simpler.
+This is only one possible workflow, and different repositories and their owners and maintainers may have different ways of doing things. For example, when you are not a collaborator on a repository, you should fork the repository to your own GitHub account, and still pull from the main repository, but add your own repository as a named remote repository and push to that instead of to the origin, and make pull requests from those pushes. As of 2015 Jul 2, I hope to elaborate on this soon.
 
 Many projects such as https://github.com/conda/conda-docs and https://github.com/ContinuumIO/docs have a README.md file like this on the front page of the repository explaining their process and how to contribute to that repository.
 
