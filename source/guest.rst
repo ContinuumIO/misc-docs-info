@@ -7,4 +7,4 @@ John Testuser, 2015 Jul 1 Wed 13:45 CDT.
 
 Susan Price, 2015 Jul 1 Wed 18:34 CDT.
 
-Nasus Ecirp, 2015 Jul 2 Thu 13:24 CDT.
+Elroy Jetson, 2015 Jul 2 Thu 13:24 CDT.
