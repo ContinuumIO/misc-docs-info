@@ -1,6 +1,6 @@
 #Contributing to this GitHub test repository
 
-Welcome! This GitHub repository aspires to become a comprehensive tutorial for GitHub, git, rst and Sphinx, GitHub Pages, and Travis CI. The repository contains a guest book, so for your first edit to a GitHub repository using these tools, you can simply sign the guest book.
+Welcome! This GitHub repository aspires to become a comprehensive tutorial for GitHub, git, ReStructuredText and Sphinx, GitHub Pages, and Travis CI. The repository contains a guest book, so for your first edit to a GitHub repository using these tools, you can simply sign the guest book.
 
 This tutorial currently (2015 Jul 2) covers making changes to a repository where you are a collaborator, and I hope soon to add information on making changes and pull requests to other repositories where you are not a collaborator, and explain common examples of each.
 
@@ -95,7 +95,7 @@ Build the html files from the rst file sources:
 
 Now open ~/ghw/misc-docs-info/build/html/index.html in a browser. As well as the browser's "file/open file" option, you can use ``open build/html/index.html`` on OS X or ``firefox build/html/index.html`` on Linux. Use the link on the index page to look at the guest book. Then you can close that browser tab.
 
-Now choose your favorite editor. nano is a cross platform editor that runs in the terminal, and there are also many good graphical editors such as gedit on Linux and Atom on OS X. Use your editor to open the file ``source/guest.rst``. This is a simple ReStructured Text .rst file, with little formatting, and it should just display the text almost the same way a text editor does. Add your name and the date, and save and close the file.
+Now choose your favorite editor. nano is a cross platform editor that runs in the terminal, and there are also many good graphical editors such as gedit on Linux and Atom on OS X. Use your editor to open the file ``source/guest.rst``. This is a simple ReStructuredText .rst file, with little formatting, and it should just display the text almost the same way a text editor does. Add your name and the date, and save and close the file.
 
 Now open index.html in a browser again and look at the guest book to see that it hasn't changed. The rst file is different, but to make the html different, we will need to rebuild it. Close the browser tab.
 
@@ -143,7 +143,7 @@ They may ask you to make further changes before they approve the pull request, a
 
 Because you are a collaborator on this project, you will see a green "merge pull request" button, and you will be able to merge your own pull request yourself. However, before making any merges yourself, you should probably ask the repository owner if they want you to merge in your own changes, or to ask the owner or another repository collaborator to review your changes and merge them.
 
-When a GitHub repository has been set up for continuous integration with the Travis CI site, you will see additional information on each pull request about whether Travis CI has finished its automatic testing and about whether those tests passed. This can be used to detect Sphinx build errors and warnings so that you can correct them and be sure the ReStructured Text files in the repository stay correctly linked and consistent. Currently (2015 Jul 2) Travis CI is set up with https://github.com/conda/conda-docs and https://github.com/electronwill/sphinx/ , and I hope soon to set up Travis CI with https://github.com/ContinuumIO/misc-docs-info .
+When a GitHub repository has been set up for continuous integration with the Travis CI site, you will see additional information on each pull request about whether Travis CI has finished its automatic testing and about whether those tests passed. This can be used to detect Sphinx build errors and warnings so that you can correct them and be sure the ReStructuredText files in the repository stay correctly linked and consistent. Currently (2015 Jul 2) Travis CI is set up with https://github.com/conda/conda-docs and https://github.com/electronwill/sphinx/ , and I hope soon to set up Travis CI with https://github.com/ContinuumIO/misc-docs-info .
 
 Once the changes are merged, go back to the terminal window, go back to the master branch, use ``git pull`` to pull the latest changes in the GitHub repository down to our local copy, and delete the sign-guest-book branch:
 
