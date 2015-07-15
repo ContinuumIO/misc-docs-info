@@ -48,6 +48,7 @@ d :subscript:`subscript` e :superscript:`superscript` f
 
 character escaping with backslashes: ``thisis\ *one*\ word`` displays as thisis\ *one*\ word
 
+escaping backslashes: ``o\\o/o`` displays as o\\o/o
 
 .. code-block:: rst
 
@@ -682,4 +683,3 @@ downloads http://sphinx-doc.org/markup/inline.html#referencing-downloadable-file
 http://reinout.vanrees.org/weblog/2009/10/30/restructured-text-cheat-sheet.html
 
 RST cheat sheet http://openalea.gforge.inria.fr/doc/openalea/doc/_build/html/source/sphinx/rest_syntax.html
-
