@@ -67,22 +67,23 @@
 <li><a class="reference internal" href="#bash" id="id7">bash</a></li>
 <li><a class="reference internal" href="#python" id="id8">python</a></li>
 <li><a class="reference internal" href="#none" id="id9">none</a></li>
+<li><a class="reference internal" href="#captions" id="id10">Captions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#tables" id="id10">Tables</a></li>
-<li><a class="reference internal" href="#links" id="id11">Links</a></li>
-<li><a class="reference internal" href="#directives" id="id12">Directives</a></li>
-<li><a class="reference internal" href="#section-alpha" id="id13">Section Alpha</a></li>
-<li><a class="reference internal" href="#section-bravo" id="id14">Section Bravo</a></li>
-<li><a class="reference internal" href="#path-names" id="id15">Path names</a></li>
-<li><a class="reference internal" href="#headers" id="id16">Headers</a></li>
-<li><a class="reference internal" href="#table-of-contents" id="id17">Table of contents</a></li>
-<li><a class="reference internal" href="#index-files" id="id18">Index files</a></li>
-<li><a class="reference internal" href="#images" id="id19">Images</a></li>
-<li><a class="reference internal" href="#downloadable-files" id="id20">Downloadable files</a></li>
-<li><a class="reference internal" href="#notes" id="id21">Notes</a></li>
-<li><a class="reference internal" href="#youtube-videos-and-other-raw-html-in-rst-files" id="id22">YouTube videos (and other raw html in rst files)</a></li>
-<li><a class="reference internal" href="#references" id="id23">References</a></li>
+<li><a class="reference internal" href="#tables" id="id11">Tables</a></li>
+<li><a class="reference internal" href="#links" id="id12">Links</a></li>
+<li><a class="reference internal" href="#directives" id="id13">Directives</a></li>
+<li><a class="reference internal" href="#section-alpha" id="id14">Section Alpha</a></li>
+<li><a class="reference internal" href="#section-bravo" id="id15">Section Bravo</a></li>
+<li><a class="reference internal" href="#path-names" id="id16">Path names</a></li>
+<li><a class="reference internal" href="#headers" id="id17">Headers</a></li>
+<li><a class="reference internal" href="#table-of-contents" id="id18">Table of contents</a></li>
+<li><a class="reference internal" href="#index-files" id="id19">Index files</a></li>
+<li><a class="reference internal" href="#images" id="id20">Images</a></li>
+<li><a class="reference internal" href="#downloadable-files" id="id21">Downloadable files</a></li>
+<li><a class="reference internal" href="#notes" id="id22">Notes</a></li>
+<li><a class="reference internal" href="#youtube-videos-and-other-raw-html-in-rst-files" id="id23">YouTube videos (and other raw html in rst files)</a></li>
+<li><a class="reference internal" href="#references" id="id24">References</a></li>
 </ul>
 </li>
 </ul>
@@ -296,9 +297,26 @@ for i in range(10):
 </pre></div>
 </div>
 </div>
+<div class="section" id="captions">
+<h3><a class="toc-backref" href="#id10">Captions</a><a class="headerlink" href="#captions" title="Permalink to this headline">¶</a></h3>
+<p>Now in Sphinx 1.3, captions can be added to code blocks as well:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> python
+   <span class="nc">:caption:</span> <span class="nf">this.py</span>
+   <span class="nc">:name:</span> <span class="nf">this-py</span>
+
+   print(&#39;Explicit is better than implicit.&#39;)
+</pre></div>
+</div>
+<div class="literal-block-wrapper container" id="this-py">
+<div class="code-block-caption"><span class="caption-text">this.py</span><a class="headerlink" href="#this-py" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&#39;Explicit is better than implicit.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="tables">
-<h2><a class="toc-backref" href="#id10">Tables</a><a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Tables</a><a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
 <p>Grid table with header:</p>
 <div class="highlight-rst"><div class="highlight"><pre>+----------+-----------+-------+
 <span class="o">|</span> a        | b         | c     |
@@ -426,7 +444,7 @@ True   True   True
 </table>
 </div>
 <div class="section" id="links">
-<h2><a class="toc-backref" href="#id11">Links</a><a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Links</a><a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-rst"><div class="highlight"><pre>http://microsoft.com
 
 <span class="s">`Google </span><span class="si">&lt;http://google.com&gt;</span><span class="s">`_</span>
@@ -441,7 +459,7 @@ This paragraph links to <span class="s">`the yahoo site`_</span>.
 <p>This paragraph links to <a class="reference external" href="http://yahoo.com/">the yahoo site</a>.</p>
 </div>
 <div class="section" id="directives">
-<h2><a class="toc-backref" href="#id12">Directives</a><a class="headerlink" href="#directives" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Directives</a><a class="headerlink" href="#directives" title="Permalink to this headline">¶</a></h2>
 <p>The ref and doc directives for references and documents:</p>
 <div class="highlight-rst"><div class="highlight"><pre>This text refers to <span class="na">:ref:</span><span class="nv">`my-reference-label`</span> ahead.
 
@@ -472,12 +490,12 @@ are just links to other files.
 <p>This text refers to <a class="reference internal" href="#my-reference-label"><span>Section Alpha</span></a> ahead.</p>
 </div>
 <div class="section" id="section-alpha">
-<span id="my-reference-label"></span><h2><a class="toc-backref" href="#id13">Section Alpha</a><a class="headerlink" href="#section-alpha" title="Permalink to this headline">¶</a></h2>
+<span id="my-reference-label"></span><h2><a class="toc-backref" href="#id14">Section Alpha</a><a class="headerlink" href="#section-alpha" title="Permalink to this headline">¶</a></h2>
 <p>This is the text of the section.</p>
 <p>Here is a <a class="reference internal" href="#label-two"><span>link to another section</span></a> up ahead.</p>
 </div>
 <div class="section" id="section-bravo">
-<span id="label-two"></span><h2><a class="toc-backref" href="#id14">Section Bravo</a><a class="headerlink" href="#section-bravo" title="Permalink to this headline">¶</a></h2>
+<span id="label-two"></span><h2><a class="toc-backref" href="#id15">Section Bravo</a><a class="headerlink" href="#section-bravo" title="Permalink to this headline">¶</a></h2>
 <p>Sphinx supports automatic cross references to <a class="reference internal" href="two.html"><em>another document</em></a> in the same archive.</p>
 <p>The link caption defaults to the document title if no other title is given: <a class="reference internal" href="two.html"><em>Document Two</em></a></p>
 <p>Or with absolute pathname: <a class="reference internal" href="two.html"><em>Document Two</em></a></p>
@@ -485,14 +503,14 @@ are just links to other files.
 are just links to other files.</p>
 </div>
 <div class="section" id="path-names">
-<h2><a class="toc-backref" href="#id15">Path names</a><a class="headerlink" href="#path-names" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Path names</a><a class="headerlink" href="#path-names" title="Permalink to this headline">¶</a></h2>
 <p>A document at the path <code class="docutils literal"><span class="pre">/sketches/index</span></code> could refer to the document <code class="docutils literal"><span class="pre">/people</span></code> by
 absolute name as <code class="docutils literal"><span class="pre">:doc:`/people`</span></code> or by relative name as <code class="docutils literal"><span class="pre">:doc:`../people`</span></code> and
 could refer to <code class="docutils literal"><span class="pre">/sketches/parrot</span></code> by absolute name as <code class="docutils literal"><span class="pre">:doc:`/sketches/parrot`</span></code> or
 by relative name as <code class="docutils literal"><span class="pre">:doc:`parrot`</span></code>.</p>
 </div>
 <div class="section" id="headers">
-<h2><a class="toc-backref" href="#id16">Headers</a><a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Headers</a><a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
 <p>Usually # signs over and under a title are only ever used to indicate Part One,
 Part Two, and so on in a book, and * signs over and under a title only for chapters
 in a book. This is the complete code of <a class="reference internal" href="two.html"><em>Document Two</em></a>, which shows those, and typical
@@ -562,7 +580,7 @@ to indicate a paragraph break.
 </div>
 </div>
 <div class="section" id="table-of-contents">
-<h2><a class="toc-backref" href="#id17">Table of contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Table of contents</a><a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <p>As you can see above, this file uses simply <code class="docutils literal"><span class="pre">..</span> <span class="pre">contents::</span></code> for its table of contents.
 Please go look at the table of contents at the top of the file to see how that displays,
 then return here.</p>
@@ -577,7 +595,7 @@ in the table of contents. Please look at <a class="reference internal" href="two
 then return here.</p>
 </div>
 <div class="section" id="index-files">
-<h2><a class="toc-backref" href="#id18">Index files</a><a class="headerlink" href="#index-files" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Index files</a><a class="headerlink" href="#index-files" title="Permalink to this headline">¶</a></h2>
 <p>Instead of using the <code class="docutils literal"><span class="pre">contents</span></code> directive to show a table of its own contents,
 the index file uses the <code class="docutils literal"><span class="pre">toctree</span></code> directive to show a table of other files.
 All files in the archive should be reachable from the toctrees in the index. Files
@@ -647,7 +665,7 @@ Second text.
 </div>
 </div>
 <div class="section" id="images">
-<h2><a class="toc-backref" href="#id19">Images</a><a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Images</a><a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
 <p>This is allowed in rst in general, but produces a &#8216;nonlocal image&#8217; warning in sphinx:</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Green_eyes_kitten.jpg/120px-Green_eyes_kitten.jpg
 </pre></div>
@@ -662,7 +680,7 @@ probably best avoided anyway. Here&#8217;s a local image.</p>
 <img alt="../_images/Puppy_2.jpg" src="../_images/Puppy_2.jpg" />
 </div>
 <div class="section" id="downloadable-files">
-<h2><a class="toc-backref" href="#id20">Downloadable files</a><a class="headerlink" href="#downloadable-files" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id21">Downloadable files</a><a class="headerlink" href="#downloadable-files" title="Permalink to this headline">¶</a></h2>
 <p>Files marked for download will be copied from their place in the source directory
 to build/html/_downloads , and duplicate filenames are handled.</p>
 <div class="highlight-rst"><div class="highlight"><pre>See <span class="na">:download:</span><span class="nv">`this example script &lt;../example.py&gt;`</span>.
@@ -671,7 +689,7 @@ to build/html/_downloads , and duplicate filenames are handled.</p>
 <p>See <a class="reference download internal" href="../_downloads/example.py"><code class="xref download docutils literal"><span class="pre">this</span> <span class="pre">example</span> <span class="pre">script</span></code></a>.</p>
 </div>
 <div class="section" id="notes">
-<h2><a class="toc-backref" href="#id21">Notes</a><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">Notes</a><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">note</span><span class="p">::</span> This is a note admonition.
    This is the second line of the first paragraph.
 
@@ -692,7 +710,7 @@ following.</li>
 </div>
 </div>
 <div class="section" id="youtube-videos-and-other-raw-html-in-rst-files">
-<h2><a class="toc-backref" href="#id22">YouTube videos (and other raw html in rst files)</a><a class="headerlink" href="#youtube-videos-and-other-raw-html-in-rst-files" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">YouTube videos (and other raw html in rst files)</a><a class="headerlink" href="#youtube-videos-and-other-raw-html-in-rst-files" title="Permalink to this headline">¶</a></h2>
 <p>On YouTube you can click &#8220;share&#8221; and then &#8220;embed&#8221;, and it will show iframe code like this.</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">raw</span><span class="p">::</span> html
 
@@ -701,7 +719,7 @@ following.</li>
 </div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UaIvrDWrIWM" frameborder="0" allowfullscreen></iframe></div>
 <div class="section" id="references">
-<h2><a class="toc-backref" href="#id23">References</a><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id24">References</a><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>intro to sphinx <a class="reference external" href="http://docs.writethedocs.org/tools/sphinx/">http://docs.writethedocs.org/tools/sphinx/</a></p>
 <p>rst primer <a class="reference external" href="http://sphinx-doc.org/rest.html">http://sphinx-doc.org/rest.html</a></p>
 <p>first steps w sphinx <a class="reference external" href="http://sphinx-doc.org/tutorial.html">http://sphinx-doc.org/tutorial.html</a></p>
@@ -729,6 +747,7 @@ following.</li>
 <li><a class="reference internal" href="#bash">bash</a></li>
 <li><a class="reference internal" href="#python">python</a></li>
 <li><a class="reference internal" href="#none">none</a></li>
+<li><a class="reference internal" href="#captions">Captions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#tables">Tables</a></li>
