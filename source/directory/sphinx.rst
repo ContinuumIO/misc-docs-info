@@ -266,6 +266,24 @@ bash and python.
   for i in range(10):
       print(i)
 
+Captions
+^^^^^^^^
+
+Now in Sphinx 1.3, captions can be added to code blocks as well:
+
+.. code-block:: rst
+
+  .. code-block:: python
+     :caption: this.py
+     :name: this-py
+
+     print('Explicit is better than implicit.')
+
+.. code-block:: python
+   :caption: this.py
+   :name: this-py
+
+   print('Explicit is better than implicit.')
 
 Tables
 ------
