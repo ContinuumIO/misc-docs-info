@@ -2,7 +2,7 @@ Main Sphinx Example File
 ========================
 
 .. contents::
-
+   :local:
 
 Welcome! This Sphinx reference file shows ReStructured Text (rst) code followed
 by its html output.
@@ -499,7 +499,7 @@ first few lines:
   ========================
 
   .. contents::
-
+     :local:
 
   Welcome! This Sphinx reference file shows ReStructured Text (rst) code followed
   by its html output.
@@ -513,7 +513,7 @@ first few lines:
     multiple lines in the source file
     will display on one line in the
     built html file.
-    
+  
     The source file uses two line breaks
     to indicate a paragraph break.
 
@@ -528,9 +528,21 @@ first few lines:
 Table of contents
 -----------------
 
-As you can see above, this file uses simply ``.. contents::`` for its table of contents. 
-Please go look at the table of contents at the top of the file to see how that displays, 
-then return here.
+.. code-block:: rst
+
+  .. contents::
+
+.. contents::
+
+Adding the ``:local:`` option removes the page title "Main Sphinx Example File" and 
+the table of contents title "Contents". Please go look at the table of contents at 
+the top of this file to see how that displays, then return here.
+
+.. code-block:: rst
+
+  .. contents::
+     :local:
+
 
 :doc:`two` uses this table of contents:
 
@@ -591,6 +603,8 @@ return here.
 
      dummya
      dummyb
+     guest
+     ipynb
 
 
   Second Set
