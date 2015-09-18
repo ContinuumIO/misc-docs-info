@@ -409,7 +409,7 @@ The ref and doc directives for references and documents:
   Section Bravo
   -------------
 
-  Sphinx supports automatic cross references to :doc:`a document called two<two>` in the same archive.
+  Sphinx supports automatic cross references to :doc:`another document<two>` in the same archive.
 
   The link caption defaults to the document title if no other title is given: :doc:`two`
 
