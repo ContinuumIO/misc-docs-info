@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'sphinx'
-copyright = '2015, Will Warner'
+copyright = '2015-2017, Continuum Analytics'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
