@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>reStructuredText cheat sheet &#8212; sphinx 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Main Sphinx example file" href="directory/sphinx.html" />
+    <link rel="prev" title="IPython Notebook" href="ipynb.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="restructuredtext-cheat-sheet">
+<h1>reStructuredText cheat sheet<a class="headerlink" href="#restructuredtext-cheat-sheet" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#headings" id="id1">Headings</a></li>
+<li><a class="reference internal" href="#tables-of-contents" id="id2">Tables of contents</a></li>
+<li><a class="reference internal" href="#code-formatting" id="id3">Code formatting</a></li>
+<li><a class="reference internal" href="#lists" id="id4">Lists</a></li>
+<li><a class="reference internal" href="#links" id="id5">Links</a><ul>
+<li><a class="reference internal" href="#section-alpha" id="id6">Section alpha</a></li>
+<li><a class="reference internal" href="#section-bravo" id="id7">Section bravo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#images" id="id8">Images</a></li>
+</ul>
+</div>
+<p>This cheat sheet explains how to use common reStructuredText formatting with the Sphinx documentation generator.</p>
+<div class="section" id="headings">
+<h2><a class="toc-backref" href="#id1">Headings</a><a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>Start each section in a page with a heading. Use H1 for the page&#8217;s title, H2 for the page&#8217;s sections and H3 for the subsections.</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="gh">==========</span>
+<span class="gh">Header One</span>
+<span class="gh">==========</span>
+
+<span class="gh">Header Two</span>
+<span class="gh">==========</span>
+
+<span class="gh">Header Three</span>
+<span class="gh">------------</span>
+
+<span class="gh">Header Four</span>
+<span class="gh">^^^^^^^^^^^</span>
+
+<span class="gh">Header Five</span>
+<span class="gh">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>NOTE: The lines below and above a header must be at least the length of the text.</p>
+<p>NOTE: H4 and H5 are discouraged and rarely used.</p>
+<p>NOTE: Sphinx will actually accept any header style it encounters first as H1, the next as H2, and so on, but we prefer to use these styles for consistency.</p>
+</div>
+<div class="section" id="tables-of-contents">
+<h2><a class="toc-backref" href="#id2">Tables of contents</a><a class="headerlink" href="#tables-of-contents" title="Permalink to this headline">¶</a></h2>
+<p>We use two types of tables of contents (TOCs):</p>
+<ol class="arabic simple">
+<li>TOCTREE: This organizes the pages and creates a nested list of links to each page in the left navigation.</li>
+<li>CONTENTS: This creates a nested list of links to sections of the current page as in-page navigation.</li>
+</ol>
+<p>Sphinx keeps pages in a <a class="reference external" href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree data structure</a> where each node is a page. The pages that have child pages list them with the <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> directive. The left navigation that links to each page is built from these lists.</p>
+<p>By default the <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> directive creates both left navigation and in-page navigation links to the child pages. Using <code class="docutils literal"><span class="pre">..</span> <span class="pre">toctree::</span></code> with the <code class="docutils literal"><span class="pre">:hidden:</span></code> option creates left navigation only.</p>
+<p>Sphinx requires that the toctree lists include all pages. If a page is not in any toctree list, it is a page with no parent page, or an &#8220;orphan&#8221; page, and the Sphinx build will fail with an error. If for some reason a page must be in the documentation and must not be in the left navigation, the <code class="docutils literal"><span class="pre">:orphan:</span></code> directive can be added at the top of that page so that Sphinx will build without errors. Please avoid the <code class="docutils literal"><span class="pre">:orphan:</span></code> directive as much as possible.</p>
+<p>The optional directive <code class="docutils literal"><span class="pre">..</span> <span class="pre">contents::</span></code> will automatically scan the headers in a page and build an in-page nested table of contents from them. In-page links to the sections of a page make it easier for users to read long pages.</p>
+<p>A <code class="docutils literal"><span class="pre">..</span> <span class="pre">contents::</span></code> directive may use the depth option to limit the depth of the nested list. For example, <code class="docutils literal"><span class="pre">:depth:</span> <span class="pre">2</span></code> will build a table of contents that only shows the highest two levels of headers. Use this in pages with many headers to keep the table of contents from being too long and unwieldy.</p>
+<p>The <a class="reference internal" href="directory/sphinx.html"><span class="doc">Main Sphinx example file</span></a> includes more information and examples on <code class="docutils literal"><span class="pre">contents</span></code> and <code class="docutils literal"><span class="pre">toctree</span></code>.</p>
+</div>
+<div class="section" id="code-formatting">
+<h2><a class="toc-backref" href="#id3">Code formatting</a><a class="headerlink" href="#code-formatting" title="Permalink to this headline">¶</a></h2>
+<p>Use fixed width or monospace text for inline code. EXAMPLE:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Use <span class="s">``cd tmp``</span> to change to the <span class="s">``tmp``</span> directory.
+</pre></div>
+</div>
+<p>Use <code class="docutils literal"><span class="pre">cd</span> <span class="pre">tmp</span></code> to change to the <code class="docutils literal"><span class="pre">tmp</span></code> directory.</p>
+<p>Use the <code class="docutils literal"><span class="pre">..</span> <span class="pre">code-block::</span></code> directive for blocks of code. EXAMPLE:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">python</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Code blocks can use the types <code class="docutils literal"><span class="pre">python</span></code> <code class="docutils literal"><span class="pre">rst</span></code> <code class="docutils literal"><span class="pre">yaml</span></code> <code class="docutils literal"><span class="pre">bash</span></code> <code class="docutils literal"><span class="pre">none</span></code> and more.</p>
+</div>
+<div class="section" id="lists">
+<h2><a class="toc-backref" href="#id4">Lists</a><a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>Use &#8220;#&#8221; for ordered (numbered) lists and &#8220;*&#8221; for unordered lists. EXAMPLES:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">#.</span> First item
+<span class="m">#.</span> Second item
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>First item</li>
+<li>Second item</li>
+</ol>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="m">*</span> Begin your list
+<span class="m">*</span> Split long list items across any
+  number of lines
+<span class="m">*</span> Continue your list
+
+  <span class="m">*</span> Use nested lists when appropriate
+  <span class="m">*</span> Make sure the spacing is correct
+
+<span class="m">*</span> Finish your list.
+</pre></div>
+</div>
+<ul class="simple">
+<li>Begin your list</li>
+<li>Split long list items across any
+number of lines</li>
+<li>Continue your list<ul>
+<li>Use nested lists when appropriate</li>
+<li>Make sure the spacing is correct</li>
+</ul>
+</li>
+<li>Finish your list.</li>
+</ul>
+</div>
+<div class="section" id="links">
+<h2><a class="toc-backref" href="#id5">Links</a><a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p>reStructuredText supports ordinary links to outside pages. It also has a simpler and more flexible way to link to documents or sections of documents in the current documentation project.</p>
+<p>Document links with the <code class="docutils literal"><span class="pre">:doc:</span></code> directive send the reader to the beginning of another page.</p>
+<p>Reference links with the <code class="docutils literal"><span class="pre">:ref:</span></code> directive send the reader to another section. The section may be in the current page or another page in the same project. Reference links work like HTML anchor links such as <code class="docutils literal"><span class="pre">file.html#section-one</span></code>.</p>
+<p>EXAMPLES:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Links: http://microsoft.com . <span class="s">`Google </span><span class="si">&lt;http://google.com&gt;</span><span class="s">`_</span>. See also <span class="na">:ref:</span><span class="nv">`cheatsheet-alpha`</span> ahead.
+
+<span class="p">..</span> <span class="nt">_cheatsheet-alpha:</span>
+
+<span class="gh">Section alpha</span>
+<span class="gh">-------------</span>
+</pre></div>
+</div>
+<p>Links: <a class="reference external" href="http://microsoft.com">http://microsoft.com</a> . <a class="reference external" href="http://google.com">Google</a>. See also <a class="reference internal" href="#cheatsheet-alpha"><span class="std std-ref">Section alpha</span></a> ahead.</p>
+<div class="section" id="section-alpha">
+<span id="cheatsheet-alpha"></span><h3><a class="toc-backref" href="#id6">Section alpha</a><a class="headerlink" href="#section-alpha" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>Here is a <span class="na">:ref:</span><span class="nv">`link to another section &lt;cheatsheet-bravo&gt;`</span> up ahead.
+
+<span class="p">..</span> <span class="nt">_cheatsheet-bravo:</span>
+
+<span class="gh">Section bravo</span>
+<span class="gh">-------------</span>
+</pre></div>
+</div>
+<p>Here is a <a class="reference internal" href="#cheatsheet-bravo"><span class="std std-ref">link to another section</span></a> up ahead.</p>
+</div>
+<div class="section" id="section-bravo">
+<span id="cheatsheet-bravo"></span><h3><a class="toc-backref" href="#id7">Section bravo</a><a class="headerlink" href="#section-bravo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rst"><div class="highlight"><pre><span></span>For more information refer to <span class="na">:doc:</span><span class="nv">`another document &lt;directory/two&gt;`</span>.
+
+The link caption defaults to the document title if no other title is given: <span class="na">:doc:</span><span class="nv">`directory/two`</span>
+</pre></div>
+</div>
+<p>For more information refer to <a class="reference internal" href="directory/two.html"><span class="doc">another document</span></a>.</p>
+<p>The link caption defaults to the document title if no other title is given: <a class="reference internal" href="directory/two.html"><span class="doc">Document Two</span></a></p>
+</div>
+</div>
+<div class="section" id="images">
+<h2><a class="toc-backref" href="#id8">Images</a><a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<p>Insert images with the <code class="docutils literal"><span class="pre">..</span> <span class="pre">image::</span></code> directive.</p>
+<p>To separate the text after an image from the image, insert extra space with a vertical bar character (&#8220;|&#8221;).</p>
+<p>EXAMPLE:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> img/earth.jpg
+
+|
+
+Text after the image goes here.
+</pre></div>
+</div>
+<img alt="_images/earth.jpg" src="_images/earth.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Text after the image goes here.</p>
+<p>Sphinx can also create tables, embed raw html, and more. For further information please see the <a class="reference internal" href="directory/sphinx.html"><span class="doc">Main Sphinx example file</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">reStructuredText cheat sheet</a><ul>
+<li><a class="reference internal" href="#headings">Headings</a></li>
+<li><a class="reference internal" href="#tables-of-contents">Tables of contents</a></li>
+<li><a class="reference internal" href="#code-formatting">Code formatting</a></li>
+<li><a class="reference internal" href="#lists">Lists</a></li>
+<li><a class="reference internal" href="#links">Links</a><ul>
+<li><a class="reference internal" href="#section-alpha">Section alpha</a></li>
+<li><a class="reference internal" href="#section-bravo">Section bravo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#images">Images</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="ipynb.html" title="previous chapter">IPython Notebook</a></li>
+      <li>Next: <a href="directory/sphinx.html" title="next chapter">Main Sphinx example file</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/cheatsheet.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015-2017, Continuum Analytics.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/cheatsheet.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
