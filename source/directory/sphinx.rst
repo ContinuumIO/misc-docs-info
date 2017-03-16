@@ -1,4 +1,4 @@
-Main Sphinx Example File
+Main Sphinx example file
 ========================
 
 .. contents::
