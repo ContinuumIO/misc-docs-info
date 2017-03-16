@@ -33,6 +33,7 @@ First Set of Documents
    dummyb
    guest
    ipynb
+   cheatsheet
 
 
 Second Set
