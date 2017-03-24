@@ -1,4 +1,4 @@
-Main Sphinx Example File
+Main Sphinx example file
 ========================
 
 .. contents::
@@ -645,12 +645,21 @@ are local images. It might also be possible to embed a nonlocal image similarly 
 embedding a YouTube video, as explained below, but embedding nonlocal images is 
 probably best avoided anyway. Here's a local image.
 
+To ensure plenty of space between an image and the text after it, you can use a bar.
+
 .. code-block:: rst
 
   .. image:: Puppy_2.jpg
 
+  |
+  
+  Text after the image.
+
 .. image:: Puppy_2.jpg
 
+|
+
+Text after the image.
 
 Downloadable files
 ------------------
