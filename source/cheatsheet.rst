@@ -182,13 +182,13 @@ EXAMPLE:
 
 .. code-block:: rst
 
-    .. image:: img/earth.jpg
+    .. image:: /img/earth.jpg
 
     |
 
     Text after the image goes here.
 
-.. image:: img/earth.jpg
+.. image:: /img/earth.jpg
 
 |
 
