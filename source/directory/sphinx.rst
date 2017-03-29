@@ -301,6 +301,7 @@ Grid table with header:
   | west     | center    | east  |
   +----------+-----------+-------+
   | south    | south     | south |
+  |          |           |       |
   | west     |           | east  |
   +----------+-----------+-------+
 
@@ -313,11 +314,14 @@ Grid table with header:
 | west     | center    | east  |
 +----------+-----------+-------+
 | south    | south     | south |
+|          |           |       |
 | west     |           | east  |
 +----------+-----------+-------+
 
+Note that line breaks in the south west and south east boxes are preserved and
+line breaks in the north west and north east boxes are not.
 
-Grid table without:
+Grid table without header:
 
 .. code-block:: rst
 
