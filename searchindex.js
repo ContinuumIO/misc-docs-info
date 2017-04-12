@@ -1,1 +1,1 @@
-Search.setIndex({envversion:47,filenames:["index"],objects:{},objnames:{},objtypes:{},terms:{been:0,continuum:0,doc:0,http:0,inform:0,move:0,now:0,repo:0,restructuredtext:0,thi:0},titles:["Deprecated"],titleterms:{deprec:0}})
+Search.setIndex({envversion:47,filenames:["cheatsheet","index"],objects:{},objnames:{},objtypes:{},terms:{been:[0,1],continuum:[0,1],doc:[0,1],http:[0,1],inform:[0,1],move:[0,1],now:[0,1],repo:[0,1],restructuredtext:[0,1],thi:[0,1]},titles:["Deprecated","Deprecated"],titleterms:{deprec:[0,1]}})
